@@ -113,5 +113,3 @@ def swissPairings():
         pairings.append((standings[i - 1][0], standings[i - 1][1], standings[i][0], standings[i][1]))
 
     return pairings
-
-
