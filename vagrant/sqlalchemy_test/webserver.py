@@ -1,6 +1,17 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import cgi  # cgi stands for Commond Gateway Interface
 
+# Import, register database with ORM Sqlalchemy
+from database_setup import Base, Restaurant, MenuItem
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+# Create session and connect to DB
+engine = create_engine('sqlite:///restaurantmenu.db')
+Base.metadata.bind = engine
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
+
 
 class webServerHandler(BaseHTTPRequestHandler):
     """docstring for webServerHandler"""
@@ -22,6 +33,25 @@ class webServerHandler(BaseHTTPRequestHandler):
 				"""
                 print output
                 return
+
+            if self.path.endswith("/restaurants"):
+        		restaurants = session.query(Restaurant).all()
+        		self.send_response(200)
+        		self.send_header('Content-type', 'text/html')
+        		self.end_headers()
+        		output = ""
+        		output += "<html><body>"
+        		for restaurant in restaurants:
+        			output += restaurant.name
+        			output += "</br>"
+        			output += "<a href='#'>Edit</a>"
+        			output += "</br>"
+        			output += "<a href='#'>Delete</a>"
+        			output += "</br></br></br>"
+
+        		output +="</body></html>"
+        		self.wfile.write(output)
+        		return
 
             if self.path.endswith("/hi"):
                 self.send_response(200)
