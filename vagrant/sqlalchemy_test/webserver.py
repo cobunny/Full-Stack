@@ -1,5 +1,5 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
-import cgi  # cgi stands for Commond Gateway Interface
+import cgi  # cgi stands for Common Gateway Interface
 
 # Import, register database with ORM Sqlalchemy
 from database_setup import Base, Restaurant, MenuItem
@@ -35,23 +35,39 @@ class webServerHandler(BaseHTTPRequestHandler):
                 return
 
             if self.path.endswith("/restaurants"):
-        		restaurants = session.query(Restaurant).all()
-        		self.send_response(200)
-        		self.send_header('Content-type', 'text/html')
-        		self.end_headers()
-        		output = ""
-        		output += "<html><body>"
-        		for restaurant in restaurants:
-        			output += restaurant.name
-        			output += "</br>"
-        			output += "<a href='#'>Edit</a>"
-        			output += "</br>"
-        			output += "<a href='#'>Delete</a>"
-        			output += "</br></br></br>"
+                restaurants = session.query(Restaurant).all()
+                self.send_response(200)
+                self.send_header('Content-type', 'text/html')
+                self.end_headers()
+                output = ""
+                output += "<html><body>"
+                output += "<h1>Hot Pot Cohort</h1></br>"
+                output += "<h2><a href = '/restaurants/new' > Add New </a></h2></br></br>"
+                for restaurant in restaurants:
+                    output += restaurant.name
+                    output += "</br>"
+                    output += "<a href='#'>Edit</a>"
+                    output += "</br>"
+                    output += "<a href='#'>Delete</a>"
+                    output += "</br></br></br>"
 
-        		output +="</body></html>"
-        		self.wfile.write(output)
-        		return
+                output += "</body></html>"
+                self.wfile.write(output)
+                return
+
+            if self.path.endswith("/restaurants/new"):
+                self.send_response(200)
+                self.send_header('Content-type', 'text/html')
+                self.end_headers()
+                output = ""
+                output += "<html><body>"
+                output += "<h1>New Fav Pot</h1>"
+                output += "<form method='POST' enctype='multipart/form-data' action='/restaurants/new'>"
+                output += "<input name='newHotPotRestaurant' type='text' placeholder='New Fav Hot Pot'>"
+                output += "<input type='submit' value='Go'></form>"
+                output += "</form></body></html>"
+                self.wfile.write(output)
+                return
 
             if self.path.endswith("/hi"):
                 self.send_response(200)
@@ -74,29 +90,25 @@ class webServerHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         try:
+            if(self.path.endswith("/restaurants/new")):
+                ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
+            if ctype == 'multipart/form-data':
+                fields = cgi.parse_multipart(self.rfile, pdict)
+                messagecontent = fields.get('newHotPotRestaurant')
+
+            # Create new hot pot Restaurant object
+            newRestaurant = Restaurant(name=messagecontent[0])
+            session.add(newRestaurant)
+            session.commit()
+
             self.send_response(301)
             self.send_header('Content-type', 'text/html')
+            # Redirect to home page
+            self.send_header('Location', '/restaurants')
             self.end_headers()
-            ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
-            """
-            Check if this is form data. If so, parse_multipart will collect all the fields in the form
-            """
-            if ctype == 'multipart/form-data':
-                """
-                parse_header parses html form hedar such as "Content-type" into a main value in dictionary parameters.
-                """
-                fields = cgi.parse_multipart(self.rfile, pdict)
-                messagecontent = fields.get('message')
-            output = ""
-            output += "<html><body>"
-            output += " <h2> Okay, how about this: </h2>"
-            output += "<h1> %s </h1>" % messagecontent[0]
-            output += '''<form method='POST' enctype='multipart/form-data' action='/hello'><h2>What would you like me to say?</h2><input name="message" type="text" ><input type="submit" value="Submit"> </form>'''
-            output += "</body></html>"
-            self.wfile.write(output)
-            print output
         except:
             pass
+
 
 def main():
     try:
