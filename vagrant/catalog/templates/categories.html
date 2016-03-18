@@ -1,11 +1,12 @@
-{% extends "main.html" %} {% block content %}
+{% extends "main.html" %}
+{% block content %}
 <div class="row">
     <aside class="col-sm-4">
         <h2>Categories</h2>
         <div class="category-list">
             {% for category in categories %}
             <div class="category">
-                <a href="#">
+                <a href='{{url_for('showItems', category_id=category.id)}}'>
                     <h3>{{category.name}}</h3>
                 </a>
             </div>
@@ -13,23 +14,20 @@
         </div>
     </aside>
     <section class="col-sm-8 item-list">
-        <article id="item-collection">
-            <div class="item-list-title">
-                <h3><strong>Collection</strong></h3>
-            </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                	Collection items
-                </li>
-            </ul>
-        </article>
         <article id="latest-item">
             <div class="item-list-title">
                 <h3><strong>Latest Items</strong></h3>
             </div>
+            {% for item in items %}
             <ul class="list-group">
-                <li class="list-group-item">Latest Items</li>
+                <li class="list-group-item" id="item-name">
+                    {{item.name}}
+                </li>
+                <li class="list-group-item" id="item-description">
+                    {{item.description}}
+                </li>
             </ul>
+            {% endfor %}
         </article>
     </section>
 </div>

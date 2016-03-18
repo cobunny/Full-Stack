@@ -84,7 +84,20 @@ footer {
 .list-group{
     font-size: 17px;
     color: #8c8c87;
+    font-weight: normal;
 }
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 2px 20px;
+    background-color: #F7F7F7;
+}
+
+#item-name {
+    font-weight: bold;
+}
+
 
 h1 {
     font-family: "Helvetica Neue Light", Roboto, Helvetica, Arial, sans-serif;
@@ -132,16 +145,17 @@ a {
 }
 
 .btn {
-    padding: 20px;
-    margin: 0;
-    border-color: #9FB80A;
-    border-width: 2px;
-    color: #9FB80A;
-    ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #7B7573;
+    border-color: #7B7573;
+    font-size: 20px;
+    background-color: #F7F7F7;
+    font-family: inherit;
 }
 
 .btn:hover {
-    border-color: #9FB80A;
+    background-color: #e1e17f;
 }
 
 .btn.delete {
@@ -152,6 +166,11 @@ a {
 .btn.delete:hover {
     border-color: #aaaaaa;
     color: red;
+}
+
+.btn-block{
+    border: none;
+    padding: 0px;
 }
 
 .glyphicon {
