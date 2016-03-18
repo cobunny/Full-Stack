@@ -1,28 +1,36 @@
-{% extends "main.html" %}
-{% block content %}
-	<div class="row top-menu">
-		<div class="col-md-10"></div>
-		<div class="col-md-2 text-right"></div>
-	</div>
-	<div>
-		<div class="col-md-12"></div>
-	</div>
-	<div class="row banner main">
-		<div class="col-md-1"></div>
-		<div class="col-md-11 padding-none">
-			<h1>Categories</h1>
-		</div>
-	</div>
-
-	{% for category in categories %}
-		<!--<a href = "{{url_for('showItems', items=items, category_id=category.id)}}">-->
-			<div class="row">
-				<div class="col-md-1"></div>
-					<div class="col-md-10 restaurant-list">
-						<h3>{{category.name}}</h3>
-					</div>
-				<div class="col-md-1"></div>
-			</div>
-		<!--</a>-->
-	{% endfor %}
+{% extends "main.html" %} {% block content %}
+<div class="row">
+    <aside class="col-sm-4">
+        <h2>Categories</h2>
+        <div class="category-list">
+            {% for category in categories %}
+            <div class="category">
+                <a href="#">
+                    <h3>{{category.name}}</h3>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </aside>
+    <section class="col-sm-8 item-list">
+        <article id="item-collection">
+            <div class="item-list-title">
+                <h3><strong>Collection</strong></h3>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                	Collection items
+                </li>
+            </ul>
+        </article>
+        <article id="latest-item">
+            <div class="item-list-title">
+                <h3><strong>Latest Items</strong></h3>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">Latest Items</li>
+            </ul>
+        </article>
+    </section>
+</div>
 {% endblock %}
