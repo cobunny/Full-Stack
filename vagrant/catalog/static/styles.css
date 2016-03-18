@@ -1,6 +1,6 @@
-html,body {
+html,
+body {
     font-family: "Helvetica Neue Bold", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 700;
     padding-top: 50px;
     background-color: #f7f7f7;
 }
@@ -13,14 +13,14 @@ aside {
 
 section {
     padding-top: 30px;
-    background-color:#ABCDD6;
+    background-color: #ABCDD6;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-article{
+article {
     padding-top: 30px;
-    padding-bottom:30px;
+    padding-bottom: 30px;
     text-align: center;
 }
 
@@ -73,15 +73,22 @@ footer {
     padding: 5px;
 }
 
-.item-list{
+.new-category{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.item-list {
     min-height: 1200px;
     z-index: 0;
 }
-.item-list-title {
+
+.item-list-title,
+.category-list-title {
     text-align: center;
 }
 
-.list-group{
+.list-group {
     font-size: 17px;
     color: #8c8c87;
     font-weight: normal;
@@ -96,8 +103,8 @@ footer {
 
 #item-name {
     font-weight: bold;
+    text-align: center;
 }
-
 
 h1 {
     font-family: "Helvetica Neue Light", Roboto, Helvetica, Arial, sans-serif;
@@ -105,6 +112,7 @@ h1 {
     color: #ddd;
     line-height: 60px;
     font-weight: 300;
+    margin-bottom: 1em;
 }
 
 h2 {
@@ -116,12 +124,12 @@ h2 {
 
 h3 {
     font-family: 'Merriweather Sans', sans-serif;
-    font-size: 22px;
+    font-size: 24px;
     color: #8c8c87;
     line-height: 30px;
     font-weight: bold;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 p {
@@ -144,9 +152,19 @@ a {
     font-size: 16px;
 }
 
+label {
+    margin-bottom: 0px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+    font-size:18px;
+    font-weight: 300;
+}
+
 .btn {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: #7B7573;
     border-color: #7B7573;
     font-size: 20px;
@@ -168,7 +186,7 @@ a {
     color: red;
 }
 
-.btn-block{
+.btn-block {
     border: none;
     padding: 0px;
 }
@@ -187,17 +205,6 @@ a {
 
 .divider.grey {
     background-color: #F0F0F0;
-}
-
-.menu-item {
-    background: #F0F0F0;
-    padding: 20px;
-    margin: 20px;
-    margin-left: -20px;
-}
-
-.menu-price {
-    font-weight: 700;
 }
 
 .creator {
