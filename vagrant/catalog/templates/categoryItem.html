@@ -1,21 +1,22 @@
 {% extends "main.html" %} {% block content %}
 <div class="row">
     <aside class="col-sm-4">
-        <h2>Categories</h2>
-        <div class="category-list">
-            <div class="category">
-                <a href='#'>
-                    <h3>{{category.name}}</h3>
-                </a>
-            </div>
-            <div id="button-go-back">
-                <a class="btn btn-default btn-lg" href="{{url_for('showCategories')}}" role="button"><span class="glyphicon glyphicon-arrow-left"></span>BACK</a>
-            </div>
+        <div class="creator">
+            <figure>
+                <img src="{{ url_for('static', filename='blank_user.gif') }}">
+                <figcaption><strong>User Name</strong></figcaption>
+            </figure>
+        </div>
+        <div class="title">
+            <h2>{{category.name}}</h2>
+        </div>
+        <div id="button-go-back">
+            <a class="btn btn-default btn-lg" href="{{url_for('showCategories')}}" role="button"><span class="glyphicon glyphicon-arrow-left"></span>BACK</a>
         </div>
     </aside>
     <section class="col-sm-8 item-list">
         <div class="item-list-title">
-            <h1>Collection</h1>
+            <h1>{{category.name}}</h1>
         </div>
         {% for item in items %}
         <ul class="list-group">

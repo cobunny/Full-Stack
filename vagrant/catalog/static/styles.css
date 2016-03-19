@@ -57,9 +57,13 @@ footer {
     opacity: 0.9
 }
 
+.title{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .category-list {
     padding-bottom: 20px;
-    padding-top: 20px;
 }
 
 .category a {
@@ -101,9 +105,9 @@ footer {
 
 .list-group-item {
     position: relative;
-    display:table-cell;
+    display: table-cell;
     background-color: #F7F7F7;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 #item-name {
@@ -122,9 +126,11 @@ h1 {
 
 h2 {
     font-family: 'Merriweather Sans', sans-serif;
-    font-size: 34px;
+    font-size: 37px;
     color: #42C3C9;
-    line-height: 29px;
+    line-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -147,7 +153,7 @@ p {
 }
 
 strong {
-    font-size: 26px;
+    font-size: 20px;
     color: #7B7573;
     line-height: 24px;
 }
@@ -213,10 +219,8 @@ label {
 }
 
 .creator {
-    padding-right: 20px;
-    margin-top: -20px;
-    text-align: right;
-    float: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .creator img {
@@ -228,7 +232,7 @@ label {
     font-size: 14px;
     color: #7B7573;
     font-weight: 400;
-    margin-top: -20px;
+    margin-top: 20px;
 }
 
 .flash {
