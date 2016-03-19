@@ -57,7 +57,7 @@ footer {
     opacity: 0.9
 }
 
-.title{
+.title {
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -174,13 +174,12 @@ label {
 }
 
 .btn {
-    margin-top: 20px;
-    margin-bottom: 20px;
     color: #7B7573;
     border-color: #7B7573;
     font-size: 20px;
     background-color: #F7F7F7;
     font-family: inherit;
+    font-size: 17px;
 }
 
 .btn:hover {
@@ -190,6 +189,7 @@ label {
 .btn.delete {
     border-color: #aaaaaa;
     color: #aaaaaa;
+    font-size: 16px;
 }
 
 .btn.delete:hover {
@@ -200,6 +200,34 @@ label {
 .btn-block {
     border: none;
     padding: 0px;
+}
+
+#button-go-back {
+    margin-top: 70px;
+}
+
+#btn-group-editorial {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #D9EDF7;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#new-category-item {
+    background-color: #D9EDF7;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+#new-category-item:hover {
+    background-color: #DFF0D8;
+}
+
+#delete-category {
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
 }
 
 .glyphicon {
