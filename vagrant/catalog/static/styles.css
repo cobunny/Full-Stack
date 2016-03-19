@@ -73,14 +73,16 @@ footer {
     padding: 5px;
 }
 
-.new-category{
+.new-category {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .item-list {
-    min-height: 1200px;
+    min-height: 1400px;
     z-index: 0;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .item-list-title,
@@ -92,13 +94,16 @@ footer {
     font-size: 17px;
     color: #8c8c87;
     font-weight: normal;
+    width: 400px;
+    display: table-row-group;
+    text-align: center;
 }
 
 .list-group-item {
     position: relative;
-    display: block;
-    padding: 2px 20px;
+    display:table-cell;
     background-color: #F7F7F7;
+    vertical-align:middle;
 }
 
 #item-name {
@@ -158,7 +163,7 @@ label {
 
 .form-control {
     margin-bottom: 5px;
-    font-size:18px;
+    font-size: 18px;
     font-weight: 300;
 }
 
