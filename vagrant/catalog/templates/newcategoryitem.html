@@ -11,9 +11,6 @@
                 </a>
             </div>
         </div>
-        <div id="button-go-back">
-            <a class="btn btn-lg" href="{{url_for('showCategories')}}" role="button"><span class="glyphicon glyphicon-arrow-left"></span>BACK</a>
-        </div>
     </aside>
     <section class="col-sm-8 item-list">
         <div class="category-list-title">
@@ -37,6 +34,10 @@
                             <button type="submit" class="btn btn-default" id="submit" type="submit">
                                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Create
                             </button>
+                            <a href='{{url_for('showItems', category_id=category_id)}}'>
+                                <button class="btn btn-default delete">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+                            </a>
                         </div>
                     </div>
                 </form>

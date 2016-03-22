@@ -57,6 +57,10 @@ footer {
     opacity: 0.9
 }
 
+.img-circle {
+    border: 5px solid #D9EDF7;
+}
+
 .title {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -116,8 +120,10 @@ footer {
 
 #item-name {
     font-weight: bold;
+    width: 100px;
     text-align: center;
     color: #7B7573;
+    line-height: 23px;
 }
 
 #item-name-click:hover {
@@ -198,6 +204,7 @@ label {
 .btn.delete {
     border-color: #aaaaaa;
     color: #aaaaaa;
+    display: inline-block;
 }
 
 .btn.delete:hover {
@@ -210,8 +217,8 @@ label {
     padding: 0px;
 }
 
-#button-go-back {
-    margin-top: 70px;
+.btn_cancel {
+    margin-top: 15px;
 }
 
 #btn-group-editorial {
@@ -226,16 +233,17 @@ label {
 #new-category-item {
     background-color: #D9EDF7;
     margin-top: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 #new-category-item:hover {
-    background-color: #DFF0D8;
+    background-color: #e1e17f;
 }
 
 #delete-category {
     background-color: rgba(0, 0, 0, 0.08);
     margin-bottom: 10px;
+    margin-top: 12px;
 }
 
 .glyphicon {
