@@ -4,12 +4,8 @@
         <div class="title">
             <h2>Categories</h2>
         </div>
-        <div class="category-list">
-            <div class="category">
-                <a href='#'>
-                    <h3>User's Category</h3>
-                </a>
-            </div>
+        <div id="button-go-back">
+            <a class="btn btn-lg" href="{{url_for('showCategories')}}" role="button"><span class="glyphicon glyphicon-arrow-left"></span>BACK</a>
         </div>
     </aside>
     <section class="col-sm-8 item-list">
@@ -21,7 +17,8 @@
                 <form action="{{ url_for('editCategory',category_id = category.id)}}" method="post">
                     <div class="form-group">
                         <div class="category-form">
-                            <label for="name"><h3>Rename Category:</h3></label>
+                            <label for="name">
+                                <h3>Rename Category:</h3></label>
                             <input type="text" class="form-control input-lg" maxlength="100" name="name" value="{{category.name}}" placeholder="Type name here...">
                         </div>
                         <div class="category-form">
@@ -34,11 +31,6 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="col-md-1 col-md-offset-9">
-                <div id="button-go-back">
-                    <a class="btn btn-lg" href="{{url_for('showCategories')}}" role="button"><span class="glyphicon glyphicon-arrow-left"></span>BACK</a>
-                </div>
             </div>
         </div>
     </section>

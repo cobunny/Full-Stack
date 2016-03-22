@@ -27,19 +27,18 @@
                 </button>
             </a>
         </div>
-        <div id="button-go-back">
-            <a class="btn btn-lg" href="{{url_for('showCategories')}}" role="button"><span class="glyphicon glyphicon-arrow-left"></span>BACK</a>
-        </div>
     </aside>
     <section class="col-sm-8 item-list">
         <div class="item-list-title">
             <h1>{{category.name}}</h1>
         </div>
         {% for item in items %}
-        <ul class="list-group">
-            <li class="list-group-item" id="item-name">
-                {{item.name}}
-            </li>
+        <ul class="list-group list-style-type-none">
+            <a class="list-group-item" id="item-name-click" href="{{url_for('editCategoryItem', category_id=category_id, item_id=item.id)}}">
+                <li id="item-name">
+                    {{item.name}}
+                </li>
+            </a>
             <li class="list-group-item" id="item-description">
                 {{item.description}}
             </li>
