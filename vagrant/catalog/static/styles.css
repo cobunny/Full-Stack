@@ -167,6 +167,10 @@ p {
     text-align: center;
 }
 
+ul, ol{
+    padding: 0px;
+}
+
 strong {
     font-size: 20px;
     color: #7B7573;
@@ -280,7 +284,7 @@ label {
 }
 
 .flash {
-    background-color: #98FB98;
+    background-color: rgba(112, 170, 245, 0.47);
     width: 100%;
     text-decoration: none;
 }
@@ -288,4 +292,6 @@ label {
 .flash li {
     list-style-type: none;
     text-align: center;
+    padding: 15px;
+    display: block;
 }

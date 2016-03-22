@@ -1,5 +1,4 @@
-{% extends "main.html" %}
-{% block content %}
+{% extends "main.html" %} {% block content %}
 <div class="row">
     <aside class="col-sm-4">
         <div class="title">
@@ -16,21 +15,31 @@
         </div>
     </aside>
     <section class="col-sm-8 item-list">
-            <div class="item-list-title">
-                <h1>Latest Items</h1>
-            </div>
-            {% for item in items %}
-            <ul class="list-group list-style-type-none">
-                <a class="list-group-item" id="item-name-click" href="{{url_for('editCategoryItem', category_id=item.category_id, item_id=item.id)}}">
+        <div class="item-list-title">
+            <h1>Latest Items</h1>
+        </div>
+        <!-- Message Flashing -->
+        <div class='flash'>
+            {% with messages = get_flashed_messages() %} {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li> <strong> {{ message }} </strong> </li>
+                {% endfor %}
+            </ul>
+            {% endif %} {% endwith %}
+        </div>
+        {% for item in items %}
+        <ul class="list-group list-style-type-none">
+            <a class="list-group-item" id="item-name-click" href="{{url_for('editCategoryItem', category_id=item.category_id, item_id=item.id)}}">
                 <li id="item-name">
                     {{item.name}}
                 </li>
-                </a>
-                <li class="list-group-item" id="item-description">
-                    {{item.description}}
-                </li>
-            </ul>
-            {% endfor %}
+            </a>
+            <li class="list-group-item" id="item-description">
+                {{item.description}}
+            </li>
+        </ul>
+        {% endfor %}
     </section>
 </div>
 {% endblock %}
