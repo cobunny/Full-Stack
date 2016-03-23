@@ -57,17 +57,6 @@ footer {
     right: auto;
 }
 
-#g-signin {
-    width: 200px;
-    padding-top: 19px;
-    display: block;
-}
-#fb-signin{
-    width: 200px;
-    display: block;
-    padding: 19px;
-}
-
 .cbp-af-header-shrink {
     padding-top: 5px;
     padding-bottom: 5px;
