@@ -13,7 +13,6 @@ aside {
 
 section {
     padding-top: 30px;
-    background-color: #ABCDD6;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -49,6 +48,24 @@ footer {
 .navbar-brand {
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 40px;
+}
+
+#sign-in-form {
+    position: relative;
+    top: 150px;
+    left: auto;
+    right: auto;
+}
+
+#g-signin {
+    width: 200px;
+    padding-top: 19px;
+    display: block;
+}
+#fb-signin{
+    width: 200px;
+    display: block;
+    padding: 19px;
 }
 
 .cbp-af-header-shrink {
@@ -91,6 +108,7 @@ footer {
     z-index: 0;
     padding-left: 60px;
     padding-right: 60px;
+    background-color: #ABCDD6;
 }
 
 .item-list-title,
@@ -120,14 +138,19 @@ footer {
 
 #item-name {
     font-weight: bold;
-    width: 100px;
+    width: 200px;
     text-align: center;
     color: #7B7573;
-    line-height: 23px;
+    line-height: 20px;
 }
 
 #item-name-click:hover {
     background-color: #e1e17f;
+}
+
+.nav-header-text {
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 h1 {
@@ -167,7 +190,8 @@ p {
     text-align: center;
 }
 
-ul, ol{
+ul,
+ol {
     padding: 0px;
 }
 

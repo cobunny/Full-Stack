@@ -1,13 +1,6 @@
-{% extends "main.html" %} {% block content %}
-{% include "header.html" %}
+{% extends "main.html" %} {% block content %} {% include "publicheader.html" %}
 <div class="row">
     <aside class="col-md-4">
-        <div class="creator">
-            <figure>
-                <img class="img-circle" src="{{ url_for('static', filename='blank_user.gif') }}">
-                <figcaption><strong>User Name</strong></figcaption>
-            </figure>
-        </div>
         <div class="title">
             <h2>{{category.name}}</h2>
         </div>
