@@ -54,6 +54,7 @@ class CategoryItem(Base):
             'id': self.id,
             'name': self.name,
             'description': self.description,
+            'user_id': self.user_id
 
         }
 
