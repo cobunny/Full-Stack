@@ -7,11 +7,19 @@
         </div>
         <div class="category-list">
             {% for category in categories %}
-            <div class="category">
-                <a href='{{url_for('showItems', category_id=category.id)}}'>
-                    <h3>{{category.name}}</h3>
-                </a>
-            </div>
+                {% if category.user_id == user_id %}   
+                    <div class="category">
+                        <a href='{{url_for('showItems', category_id=category.id)}}'>
+                            <h3>{{category.name}}</h3>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="category">
+                        <a href='#'>
+                            <h3>{{category.name}}</h3>
+                        </a>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </aside>
