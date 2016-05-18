@@ -15,9 +15,9 @@
                     </div>
                 {% else %}
                     <div class="category">
-                        <a href='#'>
+                        <div>
                             <h3>{{category.name}}</h3>
-                        </a>
+                        </div>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -39,11 +39,19 @@
         </div>
         {% for item in items %}
         <ul class="list-group list-style-type-none">
-            <a class="list-group-item" id="item-name-click" href="{{url_for('editCategoryItem', category_id=item.category_id, item_id=item.id)}}">
-                <li id="item-name">
-                    {{item.name}}
-                </li>
-            </a>
+            {% if item.user_id == user_id %}
+                <a class="list-group-item" id="item-name-click" href="{{url_for('editCategoryItem', category_id=item.category_id, item_id=item.id)}}">
+                    <li id="item-name">
+                         {{item.name}}
+                    </li>
+                </a>
+            {% else %}
+                 <div class="list-group-item" id="item-name-click">
+                    <li id="item-name">
+                        {{item.name}}
+                    </li>
+                </div>
+            {% endif %}
             <li class="list-group-item" id="item-description">
                 {{item.description}}
             </li>
